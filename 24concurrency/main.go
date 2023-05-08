@@ -24,10 +24,15 @@ import (
 // do not communicate by sharing memory instead share memory by communicating
 
 
-// race conditions
+// race conditions solve by using mutex
+
+// channels 
+// one simple go routine one go routine donot have any idea of another goroutine
+// with the help of channels gorotine can communicate with eachother
+//
 
 var wg sync.WaitGroup
-var mu sync.Mutex // pointer
+var mu sync.Mutex // pointer    var mu &sync.Mutex{}   // * used while declaration and &used while send the data or receiveinf the data
 var signal = []string {"test"}
 func main() {
 	// go greeter("hello") // fire up  a thread  but we rae not waiting  to handle this we have deictaed pkg sync
